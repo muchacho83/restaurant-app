@@ -1,0 +1,46 @@
+<h1 mat-dialog-title>Order Creation</h1>
+<div mat-dialog-content>Please selct quantity for the item:</div>
+<div mat-dialog-actions>
+  <form action="" [formGroup]="selectedOption">
+    <select name="" id="" formControlName="item">
+      <option *ngFor="let item of menu" [ngValue]="item">
+        {{ item.name }}
+        {{ item.price }}
+        {{item.quantity}}
+      </option>
+    </select>
+    <select name="" id="" formControlName="quantity">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <button mat-button (click)="addToOrder()">Add to Order</button>
+    <button  mat-button mat-dialog-close (click)="close()" >confirm</button>
+  </form>
+</div>
+<table>
+  - <tr *ngFor="let order of popupOrder">
+    <td>{{order.item.name}}</td>
+    <td>{{order.item.price}}</td>
+    <td>{{order.quantity}}</td>
+  </tr> -->
+</table>
+
+<!-- <h2>Available Food/drinks</h2>
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Name</th>
+    <th>Summary</th>
+    <th>Desciption</th>
+    <th>Price</th>
+  </tr>
+  <tr *ngFor="let item of menu">
+        <td>{{item.type}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.summary}}</td>
+        <td>{{item.desciption}}</td>
+        <td>{{item.price}}</td>
+        <button (click)="addToOrder(item)">Add to order</button>
+  </tr>
+</table> -->

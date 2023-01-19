@@ -1,0 +1,36 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+}
+
+.card1{
+  grid-column: 1;
+}
+.card2{
+  grid-column: 2;
+}
+.cardSection{
+  position: fixed;
+  right: 0px;
+  top: 64px;
+  /* height: 100%; */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+}

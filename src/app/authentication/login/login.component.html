@@ -1,0 +1,12 @@
+<form action="" [formGroup]="loginForm" class="login-form">
+    <h2>Login</h2>
+    <input type="text"  formControlName="username" placeholder="username">
+    <input type="password"  formControlName="password" placeholder="password">
+    <hr>
+    <p *ngIf="this.errMsg!==''" style="color:red">{{this.errMsg}}</p>
+    <button type="submit" (click)="login()">Login</button>
+    <div>
+        <p>Don't have an Account?</p>
+    <a routerLink="/registration"> Register</a>
+    </div>
+</form>

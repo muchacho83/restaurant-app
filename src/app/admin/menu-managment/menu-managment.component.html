@@ -1,0 +1,80 @@
+<table>
+  <tr>
+    <td>Type</td>
+    <td>Name</td>
+    <td>Summary</td>
+    <td>Description</td>
+    <td>Price</td>
+    <td>Status</td>
+  </tr>
+  <tr *ngFor="let item of menu">
+    <td>{{ item.type }}</td>
+    <td>{{ item.name }}</td>
+    <td>{{ item.summary }}</td>
+    <td>{{ item.desciption }}</td>
+    <td>{{ item.price }}</td>
+    <input
+      #status
+      type="checkbox"
+      [checked]="item.status"
+      (change)="checkBoxChange(item.id, status.checked)"
+    />
+    <button (click)="removeItem(item.id)">Remove</button>
+    <button (click)="editItem(item)">Edit</button>
+  </tr>
+</table>
+<app-dashboard>
+  <div add>
+    <h2>addItem</h2>
+    <form action="" [formGroup]="addItemForm" class="addForm">
+      <select name="" id="" formControlName="type">
+        <option [ngValue]="null" selected disabled>Select type</option>
+        <option value="Food">Food</option>
+        <option value="Beverage">Beverage</option>
+      </select>
+      <input type="text" placeholder="Name" formControlName="name" />
+      <input type="text" placeholder="Summary" formControlName="summary" />
+      <input
+        type="text"
+        placeholder="Description"
+        formControlName="description"
+      />
+      <input type="Number" placeholder="Price" formControlName="price" />
+      <input type="checkbox" placeholder="status" formControlName="status" />
+      <button
+        (click)="addItem()"
+        type="submit"
+        [disabled]="!this.addItemForm.valid"
+      >
+        submit
+      </button>
+    </form>
+  </div>
+  <div *ngIf="editing">
+    <h2>Edit Item</h2>
+    <p>Item Name:{{ this.currentlyEditing.name }}</p>
+    <form action="" [formGroup]="editForm" class="editForm">
+      <select name="" id="" formControlName="type">
+        <option [ngValue]="null" selected disabled>Select type</option>
+        <option value="Food">Food</option>
+        <option value="Beverage">Beverage</option>
+      </select>
+      <input type="text" placeholder="Name" formControlName="name" />
+      <input type="text" placeholder="Summary" formControlName="summary" />
+      <input
+        type="text"
+        placeholder="Description"
+        formControlName="description"
+      />
+      <input type="Number" placeholder="Price" formControlName="price" />
+      <input type="checkbox" placeholder="status" formControlName="status" />
+      <button type="submit" (click)="updateItem()">submit</button>
+      <button (click)="cancelUpdate()">Cancel</button>
+    </form>
+  </div>
+
+</app-dashboard>
+
+<section class="controlSection">
+ 
+</section>

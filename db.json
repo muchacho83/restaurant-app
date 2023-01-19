@@ -1,0 +1,76 @@
+{
+  "tables": [
+    {
+      "id": "14505d52-7d3c-4dd9-baf2-6d04bdfb4743",
+      "number": 2,
+      "capacity": 3,
+      "type": "indoor",
+      "bookedForDates": []
+    },
+    {
+      "id": "21c0dc30-dfd7-46b0-9675-14b861d74f8c",
+      "number": 1,
+      "capacity": 1,
+      "type": "indoor",
+      "bookedForDates": [
+        "2023-01-20"
+      ]
+    },
+    {
+      "id": "2c044f7c-3ffd-4308-9b0b-77c8c4f883aa",
+      "number": 3,
+      "capacity": 1,
+      "type": "indoor",
+      "bookedForDates": [
+        "2023-01-20"
+      ]
+    }
+  ],
+  "menu": [
+    {
+      "id": "e7d0bfee-bb36-4d8e-a5a9-22fb95fa3999",
+      "type": "Food",
+      "name": "ad",
+      "summary": "ad",
+      "desciption": "ad",
+      "price": 100,
+      "status": true
+    },
+    {
+      "id": "640dbc80-b320-49c5-b0d0-34b0e898c5d0",
+      "type": "Food",
+      "name": "asd",
+      "summary": "asd",
+      "desciption": "asd",
+      "price": 1,
+      "status": true
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$d4EyY2mHciv16YlU/lyfv.fdnnu.G0orRQbM/HYALn4eyzK3hhkUu",
+      "mobile": "599895404",
+      "name": "luka",
+      "lastName": "jagmaidze",
+      "bookings": [],
+      "id": 1
+    },
+    {
+      "email": "user@gmail.com",
+      "password": "$2a$10$5RC.N/DHUplagNyKud2oduBd3YvBQBKGreVUYPKdyIEim722C7876",
+      "mobile": "599895404",
+      "name": "luka",
+      "lastName": "jagmaidze",
+      "id": 2,
+      "bookings": [
+        {
+          "id": "e87c419e-0cbe-48df-8727-6fc3efeff004",
+          "date": "2023-01-20",
+          "bookedTable": 1,
+          "order": []
+        }
+      ]
+    }
+  ]
+}

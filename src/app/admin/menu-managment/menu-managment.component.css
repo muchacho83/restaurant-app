@@ -1,0 +1,22 @@
+.addForm{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+     /* margin-left: 5vw; */
+    border: 1px solid black;
+    /* grid-column: 1; */
+    gap: 1vh;
+
+}
+.editForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    width:20vw;
+    /* grid-column: 2; */
+
+}
+/* .controlSection{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+} */

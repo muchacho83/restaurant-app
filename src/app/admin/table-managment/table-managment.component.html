@@ -1,0 +1,52 @@
+<table>
+  <tr>
+    <td>Table Number</td>
+    <td>Table capacity</td>
+    <td>Table Type</td>
+  </tr>
+  <tr *ngFor="let table of tables">
+    <td >{{ this.table.number }}</td>
+    <td>{{ this.table.capacity }}</td>
+    <td>{{ this.table.type }}</td>
+    <td><button (click)="removeTable(this.table.id)">remove</button></td>
+    <td><button (click)="editTable(this.table)">Edit</button></td>
+  </tr>
+</table>
+<hr />
+<h2>Add Table</h2>
+<form action="" [formGroup]="tableAddForm" class="addForm">
+  <label for="tableNumber">Table Number:</label>
+  <input
+    type="number"
+    min="1"
+    formControlName="number"
+    name="tableNumber"
+  />
+  <label for="capacity">Capacity:</label>
+  <input
+    type="number"
+    min="1"
+    formControlName="capacity"
+    name="capacity"
+  />
+  <select name="" id="" formControlName="type">
+    <option [ngValue]="null" selected disabled>Select type</option>
+    <option value="indoor">Indoor</option>
+    <option value="Outdoor">Outdoor</option>
+  </select>
+  <button type="submit" (click)="addTable()" [disabled]="!tableAddForm.valid">submit</button>
+</form>
+<div *ngIf="this.editing">
+  <h2>Edit Table</h2>
+  <p>table number: <span >{{this.currentlyEditing.number}}</span> </p>
+  <form action="" [formGroup]="tableEditForm">
+    <label for="editCapacity">Capacity:</label>
+    <input type="number" min="1" formControlName="capacity" name="editCapacity">
+    <select name="" id="" formControlName="type">
+        <option [ngValue]="null" selected disabled>Select type</option>
+        <option value="indoor">Indoor</option>
+        <option value="Outdoor">Outdoor</option>
+      </select>
+      <button type="button" (click)="updateTable()" [disabled]="!tableEditForm.valid">submit</button>
+  </form>
+</div>

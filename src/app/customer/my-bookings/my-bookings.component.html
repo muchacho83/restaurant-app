@@ -1,0 +1,25 @@
+<h1>My Bookings</h1>
+<table>
+  <tr>
+    <td>Date</td>
+    <td>Table Number</td>
+  </tr>
+  <tr *ngFor="let booking of myBookings">
+    <td>{{booking.date}}</td>
+    <td>{{booking.bookedTable}}</td>
+  </tr>
+</table>
+<hr />
+<div>
+  <h1>Book a new table</h1>
+  <form action="" [formGroup]="bookingForm">
+    <input type="date" name="" id="" formControlName="date"/>
+    <select name="" id="" *ngIf="this.Tables.length!==0" formControlName="tableNumber">
+        <option  *ngFor="let table of Tables" [ngValue]="table">
+            {{table.number}}
+        </option>
+    </select>
+    <button (click)="book()">Book</button>
+  </form>
+</div>
+<hr>

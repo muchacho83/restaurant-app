@@ -1,0 +1,39 @@
+<table>
+    <tr>
+        <td>booking</td>
+        <td>Booked Table</td>
+        <!-- <td>Order</td> -->
+    </tr>
+    <tr *ngFor="let booking of myBookings">
+        <td>{{booking.date}}</td>
+        <td>{{booking.bookedTable}}</td>
+       <!-- <td *ngFor="let order of Order">
+         <p>{{order.item}}</p>
+       </td> -->
+       <td ><button (click)="viewOrder(booking)">View Order</button></td>
+
+    </tr>
+</table>
+
+<hr>
+<table>
+    <tr>
+        <td>Product</td>
+        <td>Price</td>
+        <td>Quantity</td>
+    </tr>
+    <tr *ngFor="let order of Order">
+        <td>
+            {{order.name}}
+        </td>
+        <td>
+            {{order.price}}
+        </td>
+        <td>
+            {{order.quantity}}
+        </td>
+    </tr>
+    <tr>
+        <td>Total Price: {{totalPrice}}</td>
+    </tr>
+</table>

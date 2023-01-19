@@ -1,0 +1,46 @@
+
+<table>
+  <tr>
+    <td>date</td>
+    <td>Table Number</td>
+    <!-- <td>Order</td> -->
+  </tr>
+  <tr *ngFor="let booking of myBookings">
+    <td>{{booking.date}}</td>
+    <td>{{booking.bookedTable}}</td>
+    <!-- <td *ngFor="let order of bookingsOrder">
+      {{order.name}},
+    </td> -->
+    <td><button (click)="addToOrder(booking)">New Order</button></td>
+
+  </tr>
+</table>
+
+<hr />
+<h2>My order</h2>
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Summary</th>
+        <th>Desciption</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+  <tr *ngFor="let item of Order; ">
+    <td>{{item.type}}</td>
+    <td>{{item.name}}</td>
+    <td>{{item.summary}}</td>
+    <td>{{item.desciption}}</td>
+    <td>{{item.price}}</td>
+    <td>{{item.quantity}}</td>
+    <td></td>
+    <td><button (click)="removeItem(item)">Remove</button></td>
+  </tr>
+  <tr>
+    <td>Total Price:{{totalPrice|currency}}</td>
+  </tr>
+</table>
+<button (click)="placeOrder()">Place Order</button>
+
+

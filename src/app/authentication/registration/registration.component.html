@@ -1,0 +1,62 @@
+<form action="" [formGroup]="registerForm">
+    <h1>Registration</h1>
+    <input type="text" name="" id="" placeholder="First Name" formControlName="fName" >
+    <p
+        *ngIf="
+          registerForm.get('fName')?.hasError('required') &&
+          registerForm.get('fName')?.touched
+        "
+    style="color:red">
+        name is required
+      </p>
+    <input type="text" name="" id="" placeholder="Last Name"formControlName="lName" >
+    <p
+        *ngIf="
+          registerForm.get('lName')?.hasError('required') &&
+          registerForm.get('lName')?.touched
+        "
+    style="color:red">
+       Last name is required
+      </p>
+    <input type="text" name="" id="" placeholder="Email" formControlName="email">
+    <p
+        *ngIf="
+          registerForm.get('email')?.hasError('required') &&
+          registerForm.get('email')?.touched
+        "
+    style="color:red">
+       Email is required
+      </p>
+    <input type="text" name="" id="" placeholder="telephone" formControlName="tel">
+    <p
+        *ngIf="
+          registerForm.get('tel')?.hasError('required') &&
+          registerForm.get('tel')?.touched
+        "
+    style="color:red">
+       EMail is required
+      </p>
+    <input type="text"placeholder="password" formControlName="pass">
+    <p
+        *ngIf="
+          registerForm.get('pass')?.hasError('required') &&
+          registerForm.get('pass')?.touched
+        "
+    style="color:red">
+       Password is required
+      </p>
+    <input type="text"placeholder="re-password" formControlName="rePass">
+    <p
+        *ngIf="
+          registerForm.get('rePass')?.hasError('required') &&
+          registerForm.get('rePass')?.touched
+        "
+    style="color:red">
+       RePassword is required
+      </p>
+      <p *ngIf="registerForm.hasError('noMatch')" style="color:red">Passwords do not match</p>
+    <p *ngIf="this.errMsg!=='' && this.errMsg!=='Succesfully Registered'" style="color:red">{{this.errMsg}}</p>
+    <p *ngIf="this.errMsg==='Succesfully Registered!'" >{{this.errMsg}}</p>
+    <button type="submit" (click)="register()" [disabled]="!registerForm.valid">Register</button>
+    <a routerLink="/landing-page"> Login</a>
+</form>
